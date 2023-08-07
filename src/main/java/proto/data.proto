@@ -8,6 +8,13 @@ option java_outer_classname = "DataProto";
 
 message Data{
   CommonResult commentResult = 1;
+  User user = 2;
+  string sessionId = 3;
+  Urls urls = 4;
+  string inviteCode = 5;
+  int32 privacy = 6;
+  int32 disableTime = 7;
+  string agoraAppId = 8;
 }
 
 message CommonResult{
@@ -15,3 +22,24 @@ message CommonResult{
   string errMsg = 2; // 错误内容
   string flag = 3;   // 扩展字段
 }
+
+message User{
+  int32 uid = 1;
+  string nickName = 2;
+  string identify = 3;
+}
+
+message Urls{
+  string biz = 1;
+  string session =2;
+  string friend =3;
+  string group =4;
+  string download = 5;
+  string login = 6;
+  string config = 7;
+  string wss = 8;
+  int32 socketProtocol =9;
+  int32 uploadServer = 10;
+}
+
+

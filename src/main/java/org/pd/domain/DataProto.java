@@ -27,11 +27,89 @@ public final class DataProto {
      * <code>.proto.CommonResult commentResult = 1;</code>
      * @return The commentResult.
      */
-    org.pd.domain.DataProto.CommonResult getCommentResult();
+    CommonResult getCommentResult();
     /**
      * <code>.proto.CommonResult commentResult = 1;</code>
      */
-    org.pd.domain.DataProto.CommonResultOrBuilder getCommentResultOrBuilder();
+    CommonResultOrBuilder getCommentResultOrBuilder();
+
+    /**
+     * <code>.proto.User user = 2;</code>
+     * @return Whether the user field is set.
+     */
+    boolean hasUser();
+    /**
+     * <code>.proto.User user = 2;</code>
+     * @return The user.
+     */
+    User getUser();
+    /**
+     * <code>.proto.User user = 2;</code>
+     */
+    UserOrBuilder getUserOrBuilder();
+
+    /**
+     * <code>string sessionId = 3;</code>
+     * @return The sessionId.
+     */
+    String getSessionId();
+    /**
+     * <code>string sessionId = 3;</code>
+     * @return The bytes for sessionId.
+     */
+    com.google.protobuf.ByteString
+        getSessionIdBytes();
+
+    /**
+     * <code>.proto.Urls urls = 4;</code>
+     * @return Whether the urls field is set.
+     */
+    boolean hasUrls();
+    /**
+     * <code>.proto.Urls urls = 4;</code>
+     * @return The urls.
+     */
+    Urls getUrls();
+    /**
+     * <code>.proto.Urls urls = 4;</code>
+     */
+    UrlsOrBuilder getUrlsOrBuilder();
+
+    /**
+     * <code>string inviteCode = 5;</code>
+     * @return The inviteCode.
+     */
+    String getInviteCode();
+    /**
+     * <code>string inviteCode = 5;</code>
+     * @return The bytes for inviteCode.
+     */
+    com.google.protobuf.ByteString
+        getInviteCodeBytes();
+
+    /**
+     * <code>int32 privacy = 6;</code>
+     * @return The privacy.
+     */
+    int getPrivacy();
+
+    /**
+     * <code>int32 disableTime = 7;</code>
+     * @return The disableTime.
+     */
+    int getDisableTime();
+
+    /**
+     * <code>string agoraAppId = 8;</code>
+     * @return The agoraAppId.
+     */
+    String getAgoraAppId();
+    /**
+     * <code>string agoraAppId = 8;</code>
+     * @return The bytes for agoraAppId.
+     */
+    com.google.protobuf.ByteString
+        getAgoraAppIdBytes();
   }
   /**
    * Protobuf type {@code proto.Data}
@@ -46,40 +124,43 @@ public final class DataProto {
       super(builder);
     }
     private Data() {
+      sessionId_ = "";
+      inviteCode_ = "";
+      agoraAppId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new Data();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.pd.domain.DataProto.internal_static_proto_Data_descriptor;
+      return DataProto.internal_static_proto_Data_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.pd.domain.DataProto.internal_static_proto_Data_fieldAccessorTable
+      return DataProto.internal_static_proto_Data_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.pd.domain.DataProto.Data.class, org.pd.domain.DataProto.Data.Builder.class);
+              Data.class, Builder.class);
     }
 
     public static final int COMMENTRESULT_FIELD_NUMBER = 1;
-    private org.pd.domain.DataProto.CommonResult commentResult_;
+    private CommonResult commentResult_;
     /**
      * <code>.proto.CommonResult commentResult = 1;</code>
      * @return Whether the commentResult field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasCommentResult() {
       return commentResult_ != null;
     }
@@ -87,20 +168,208 @@ public final class DataProto {
      * <code>.proto.CommonResult commentResult = 1;</code>
      * @return The commentResult.
      */
-    @java.lang.Override
-    public org.pd.domain.DataProto.CommonResult getCommentResult() {
-      return commentResult_ == null ? org.pd.domain.DataProto.CommonResult.getDefaultInstance() : commentResult_;
+    @Override
+    public CommonResult getCommentResult() {
+      return commentResult_ == null ? CommonResult.getDefaultInstance() : commentResult_;
     }
     /**
      * <code>.proto.CommonResult commentResult = 1;</code>
      */
-    @java.lang.Override
-    public org.pd.domain.DataProto.CommonResultOrBuilder getCommentResultOrBuilder() {
+    @Override
+    public CommonResultOrBuilder getCommentResultOrBuilder() {
       return getCommentResult();
     }
 
+    public static final int USER_FIELD_NUMBER = 2;
+    private User user_;
+    /**
+     * <code>.proto.User user = 2;</code>
+     * @return Whether the user field is set.
+     */
+    @Override
+    public boolean hasUser() {
+      return user_ != null;
+    }
+    /**
+     * <code>.proto.User user = 2;</code>
+     * @return The user.
+     */
+    @Override
+    public User getUser() {
+      return user_ == null ? User.getDefaultInstance() : user_;
+    }
+    /**
+     * <code>.proto.User user = 2;</code>
+     */
+    @Override
+    public UserOrBuilder getUserOrBuilder() {
+      return getUser();
+    }
+
+    public static final int SESSIONID_FIELD_NUMBER = 3;
+    private volatile Object sessionId_;
+    /**
+     * <code>string sessionId = 3;</code>
+     * @return The sessionId.
+     */
+    @Override
+    public String getSessionId() {
+      Object ref = sessionId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        sessionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sessionId = 3;</code>
+     * @return The bytes for sessionId.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getSessionIdBytes() {
+      Object ref = sessionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        sessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URLS_FIELD_NUMBER = 4;
+    private Urls urls_;
+    /**
+     * <code>.proto.Urls urls = 4;</code>
+     * @return Whether the urls field is set.
+     */
+    @Override
+    public boolean hasUrls() {
+      return urls_ != null;
+    }
+    /**
+     * <code>.proto.Urls urls = 4;</code>
+     * @return The urls.
+     */
+    @Override
+    public Urls getUrls() {
+      return urls_ == null ? Urls.getDefaultInstance() : urls_;
+    }
+    /**
+     * <code>.proto.Urls urls = 4;</code>
+     */
+    @Override
+    public UrlsOrBuilder getUrlsOrBuilder() {
+      return getUrls();
+    }
+
+    public static final int INVITECODE_FIELD_NUMBER = 5;
+    private volatile Object inviteCode_;
+    /**
+     * <code>string inviteCode = 5;</code>
+     * @return The inviteCode.
+     */
+    @Override
+    public String getInviteCode() {
+      Object ref = inviteCode_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        inviteCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string inviteCode = 5;</code>
+     * @return The bytes for inviteCode.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getInviteCodeBytes() {
+      Object ref = inviteCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        inviteCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVACY_FIELD_NUMBER = 6;
+    private int privacy_;
+    /**
+     * <code>int32 privacy = 6;</code>
+     * @return The privacy.
+     */
+    @Override
+    public int getPrivacy() {
+      return privacy_;
+    }
+
+    public static final int DISABLETIME_FIELD_NUMBER = 7;
+    private int disableTime_;
+    /**
+     * <code>int32 disableTime = 7;</code>
+     * @return The disableTime.
+     */
+    @Override
+    public int getDisableTime() {
+      return disableTime_;
+    }
+
+    public static final int AGORAAPPID_FIELD_NUMBER = 8;
+    private volatile Object agoraAppId_;
+    /**
+     * <code>string agoraAppId = 8;</code>
+     * @return The agoraAppId.
+     */
+    @Override
+    public String getAgoraAppId() {
+      Object ref = agoraAppId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        agoraAppId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string agoraAppId = 8;</code>
+     * @return The bytes for agoraAppId.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getAgoraAppIdBytes() {
+      Object ref = agoraAppId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        agoraAppId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -110,16 +379,37 @@ public final class DataProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (commentResult_ != null) {
         output.writeMessage(1, getCommentResult());
       }
+      if (user_ != null) {
+        output.writeMessage(2, getUser());
+      }
+      if (!getSessionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sessionId_);
+      }
+      if (urls_ != null) {
+        output.writeMessage(4, getUrls());
+      }
+      if (!getInviteCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inviteCode_);
+      }
+      if (privacy_ != 0) {
+        output.writeInt32(6, privacy_);
+      }
+      if (disableTime_ != 0) {
+        output.writeInt32(7, disableTime_);
+      }
+      if (!getAgoraAppIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, agoraAppId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -129,31 +419,76 @@ public final class DataProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getCommentResult());
       }
+      if (user_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getUser());
+      }
+      if (!getSessionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sessionId_);
+      }
+      if (urls_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getUrls());
+      }
+      if (!getInviteCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inviteCode_);
+      }
+      if (privacy_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, privacy_);
+      }
+      if (disableTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, disableTime_);
+      }
+      if (!getAgoraAppIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, agoraAppId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.pd.domain.DataProto.Data)) {
+      if (!(obj instanceof Data)) {
         return super.equals(obj);
       }
-      org.pd.domain.DataProto.Data other = (org.pd.domain.DataProto.Data) obj;
+      Data other = (Data) obj;
 
       if (hasCommentResult() != other.hasCommentResult()) return false;
       if (hasCommentResult()) {
         if (!getCommentResult()
             .equals(other.getCommentResult())) return false;
       }
+      if (hasUser() != other.hasUser()) return false;
+      if (hasUser()) {
+        if (!getUser()
+            .equals(other.getUser())) return false;
+      }
+      if (!getSessionId()
+          .equals(other.getSessionId())) return false;
+      if (hasUrls() != other.hasUrls()) return false;
+      if (hasUrls()) {
+        if (!getUrls()
+            .equals(other.getUrls())) return false;
+      }
+      if (!getInviteCode()
+          .equals(other.getInviteCode())) return false;
+      if (getPrivacy()
+          != other.getPrivacy()) return false;
+      if (getDisableTime()
+          != other.getDisableTime()) return false;
+      if (!getAgoraAppId()
+          .equals(other.getAgoraAppId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -164,74 +499,92 @@ public final class DataProto {
         hash = (37 * hash) + COMMENTRESULT_FIELD_NUMBER;
         hash = (53 * hash) + getCommentResult().hashCode();
       }
+      if (hasUser()) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
+      }
+      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionId().hashCode();
+      if (hasUrls()) {
+        hash = (37 * hash) + URLS_FIELD_NUMBER;
+        hash = (53 * hash) + getUrls().hashCode();
+      }
+      hash = (37 * hash) + INVITECODE_FIELD_NUMBER;
+      hash = (53 * hash) + getInviteCode().hashCode();
+      hash = (37 * hash) + PRIVACY_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivacy();
+      hash = (37 * hash) + DISABLETIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisableTime();
+      hash = (37 * hash) + AGORAAPPID_FIELD_NUMBER;
+      hash = (53 * hash) + getAgoraAppId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.pd.domain.DataProto.Data parseFrom(
+    public static Data parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(
+    public static Data parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(
+    public static Data parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(
+    public static Data parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(byte[] data)
+    public static Data parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(
+    public static Data parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(java.io.InputStream input)
+    public static Data parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(
+    public static Data parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.Data parseDelimitedFrom(java.io.InputStream input)
+    public static Data parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.pd.domain.DataProto.Data parseDelimitedFrom(
+    public static Data parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(
+    public static Data parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.pd.domain.DataProto.Data parseFrom(
+    public static Data parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -239,23 +592,23 @@ public final class DataProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.pd.domain.DataProto.Data prototype) {
+    public static Builder newBuilder(Data prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -265,18 +618,18 @@ public final class DataProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.Data)
-        org.pd.domain.DataProto.DataOrBuilder {
+        DataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.pd.domain.DataProto.internal_static_proto_Data_descriptor;
+        return DataProto.internal_static_proto_Data_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.pd.domain.DataProto.internal_static_proto_Data_fieldAccessorTable
+        return DataProto.internal_static_proto_Data_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.pd.domain.DataProto.Data.class, org.pd.domain.DataProto.Data.Builder.class);
+                Data.class, Builder.class);
       }
 
       // Construct using org.pd.domain.DataProto.Data.newBuilder()
@@ -285,11 +638,11 @@ public final class DataProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
 
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         if (commentResultBuilder_ == null) {
@@ -298,105 +651,166 @@ public final class DataProto {
           commentResult_ = null;
           commentResultBuilder_ = null;
         }
+        if (userBuilder_ == null) {
+          user_ = null;
+        } else {
+          user_ = null;
+          userBuilder_ = null;
+        }
+        sessionId_ = "";
+
+        if (urlsBuilder_ == null) {
+          urls_ = null;
+        } else {
+          urls_ = null;
+          urlsBuilder_ = null;
+        }
+        inviteCode_ = "";
+
+        privacy_ = 0;
+
+        disableTime_ = 0;
+
+        agoraAppId_ = "";
+
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.pd.domain.DataProto.internal_static_proto_Data_descriptor;
+        return DataProto.internal_static_proto_Data_descriptor;
       }
 
-      @java.lang.Override
-      public org.pd.domain.DataProto.Data getDefaultInstanceForType() {
-        return org.pd.domain.DataProto.Data.getDefaultInstance();
+      @Override
+      public Data getDefaultInstanceForType() {
+        return Data.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public org.pd.domain.DataProto.Data build() {
-        org.pd.domain.DataProto.Data result = buildPartial();
+      @Override
+      public Data build() {
+        Data result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public org.pd.domain.DataProto.Data buildPartial() {
-        org.pd.domain.DataProto.Data result = new org.pd.domain.DataProto.Data(this);
+      @Override
+      public Data buildPartial() {
+        Data result = new Data(this);
         if (commentResultBuilder_ == null) {
           result.commentResult_ = commentResult_;
         } else {
           result.commentResult_ = commentResultBuilder_.build();
         }
+        if (userBuilder_ == null) {
+          result.user_ = user_;
+        } else {
+          result.user_ = userBuilder_.build();
+        }
+        result.sessionId_ = sessionId_;
+        if (urlsBuilder_ == null) {
+          result.urls_ = urls_;
+        } else {
+          result.urls_ = urlsBuilder_.build();
+        }
+        result.inviteCode_ = inviteCode_;
+        result.privacy_ = privacy_;
+        result.disableTime_ = disableTime_;
+        result.agoraAppId_ = agoraAppId_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.pd.domain.DataProto.Data) {
-          return mergeFrom((org.pd.domain.DataProto.Data)other);
+        if (other instanceof Data) {
+          return mergeFrom((Data)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.pd.domain.DataProto.Data other) {
-        if (other == org.pd.domain.DataProto.Data.getDefaultInstance()) return this;
+      public Builder mergeFrom(Data other) {
+        if (other == Data.getDefaultInstance()) return this;
         if (other.hasCommentResult()) {
           mergeCommentResult(other.getCommentResult());
+        }
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
+        }
+        if (!other.getSessionId().isEmpty()) {
+          sessionId_ = other.sessionId_;
+          onChanged();
+        }
+        if (other.hasUrls()) {
+          mergeUrls(other.getUrls());
+        }
+        if (!other.getInviteCode().isEmpty()) {
+          inviteCode_ = other.inviteCode_;
+          onChanged();
+        }
+        if (other.getPrivacy() != 0) {
+          setPrivacy(other.getPrivacy());
+        }
+        if (other.getDisableTime() != 0) {
+          setDisableTime(other.getDisableTime());
+        }
+        if (!other.getAgoraAppId().isEmpty()) {
+          agoraAppId_ = other.agoraAppId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException();
         }
         try {
           boolean done = false;
@@ -413,8 +827,47 @@ public final class DataProto {
 
                 break;
               } // case 10
+              case 18: {
+                input.readMessage(
+                    getUserFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              case 26: {
+                sessionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getUrlsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                inviteCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+              case 48: {
+                privacy_ = input.readInt32();
+
+                break;
+              } // case 48
+              case 56: {
+                disableTime_ = input.readInt32();
+
+                break;
+              } // case 56
+              case 66: {
+                agoraAppId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
               default: {
-               // if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+//                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
 //                }
                 break;
@@ -429,9 +882,9 @@ public final class DataProto {
         return this;
       }
 
-      private org.pd.domain.DataProto.CommonResult commentResult_;
+      private CommonResult commentResult_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.pd.domain.DataProto.CommonResult, org.pd.domain.DataProto.CommonResult.Builder, org.pd.domain.DataProto.CommonResultOrBuilder> commentResultBuilder_;
+          CommonResult, CommonResult.Builder, CommonResultOrBuilder> commentResultBuilder_;
       /**
        * <code>.proto.CommonResult commentResult = 1;</code>
        * @return Whether the commentResult field is set.
@@ -443,9 +896,9 @@ public final class DataProto {
        * <code>.proto.CommonResult commentResult = 1;</code>
        * @return The commentResult.
        */
-      public org.pd.domain.DataProto.CommonResult getCommentResult() {
+      public CommonResult getCommentResult() {
         if (commentResultBuilder_ == null) {
-          return commentResult_ == null ? org.pd.domain.DataProto.CommonResult.getDefaultInstance() : commentResult_;
+          return commentResult_ == null ? CommonResult.getDefaultInstance() : commentResult_;
         } else {
           return commentResultBuilder_.getMessage();
         }
@@ -453,7 +906,7 @@ public final class DataProto {
       /**
        * <code>.proto.CommonResult commentResult = 1;</code>
        */
-      public Builder setCommentResult(org.pd.domain.DataProto.CommonResult value) {
+      public Builder setCommentResult(CommonResult value) {
         if (commentResultBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -470,7 +923,7 @@ public final class DataProto {
        * <code>.proto.CommonResult commentResult = 1;</code>
        */
       public Builder setCommentResult(
-          org.pd.domain.DataProto.CommonResult.Builder builderForValue) {
+          CommonResult.Builder builderForValue) {
         if (commentResultBuilder_ == null) {
           commentResult_ = builderForValue.build();
           onChanged();
@@ -483,11 +936,11 @@ public final class DataProto {
       /**
        * <code>.proto.CommonResult commentResult = 1;</code>
        */
-      public Builder mergeCommentResult(org.pd.domain.DataProto.CommonResult value) {
+      public Builder mergeCommentResult(CommonResult value) {
         if (commentResultBuilder_ == null) {
           if (commentResult_ != null) {
             commentResult_ =
-              org.pd.domain.DataProto.CommonResult.newBuilder(commentResult_).mergeFrom(value).buildPartial();
+              CommonResult.newBuilder(commentResult_).mergeFrom(value).buildPartial();
           } else {
             commentResult_ = value;
           }
@@ -515,7 +968,7 @@ public final class DataProto {
       /**
        * <code>.proto.CommonResult commentResult = 1;</code>
        */
-      public org.pd.domain.DataProto.CommonResult.Builder getCommentResultBuilder() {
+      public CommonResult.Builder getCommentResultBuilder() {
         
         onChanged();
         return getCommentResultFieldBuilder().getBuilder();
@@ -523,23 +976,23 @@ public final class DataProto {
       /**
        * <code>.proto.CommonResult commentResult = 1;</code>
        */
-      public org.pd.domain.DataProto.CommonResultOrBuilder getCommentResultOrBuilder() {
+      public CommonResultOrBuilder getCommentResultOrBuilder() {
         if (commentResultBuilder_ != null) {
           return commentResultBuilder_.getMessageOrBuilder();
         } else {
           return commentResult_ == null ?
-              org.pd.domain.DataProto.CommonResult.getDefaultInstance() : commentResult_;
+              CommonResult.getDefaultInstance() : commentResult_;
         }
       }
       /**
        * <code>.proto.CommonResult commentResult = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.pd.domain.DataProto.CommonResult, org.pd.domain.DataProto.CommonResult.Builder, org.pd.domain.DataProto.CommonResultOrBuilder> 
+          CommonResult, CommonResult.Builder, CommonResultOrBuilder>
           getCommentResultFieldBuilder() {
         if (commentResultBuilder_ == null) {
           commentResultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.pd.domain.DataProto.CommonResult, org.pd.domain.DataProto.CommonResult.Builder, org.pd.domain.DataProto.CommonResultOrBuilder>(
+              CommonResult, CommonResult.Builder, CommonResultOrBuilder>(
                   getCommentResult(),
                   getParentForChildren(),
                   isClean());
@@ -547,13 +1000,541 @@ public final class DataProto {
         }
         return commentResultBuilder_;
       }
-      @java.lang.Override
+
+      private User user_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          User, User.Builder, UserOrBuilder> userBuilder_;
+      /**
+       * <code>.proto.User user = 2;</code>
+       * @return Whether the user field is set.
+       */
+      public boolean hasUser() {
+        return userBuilder_ != null || user_ != null;
+      }
+      /**
+       * <code>.proto.User user = 2;</code>
+       * @return The user.
+       */
+      public User getUser() {
+        if (userBuilder_ == null) {
+          return user_ == null ? User.getDefaultInstance() : user_;
+        } else {
+          return userBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.proto.User user = 2;</code>
+       */
+      public Builder setUser(User value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          user_ = value;
+          onChanged();
+        } else {
+          userBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.User user = 2;</code>
+       */
+      public Builder setUser(
+          User.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
+          onChanged();
+        } else {
+          userBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.User user = 2;</code>
+       */
+      public Builder mergeUser(User value) {
+        if (userBuilder_ == null) {
+          if (user_ != null) {
+            user_ =
+              User.newBuilder(user_).mergeFrom(value).buildPartial();
+          } else {
+            user_ = value;
+          }
+          onChanged();
+        } else {
+          userBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.User user = 2;</code>
+       */
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = null;
+          onChanged();
+        } else {
+          user_ = null;
+          userBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.User user = 2;</code>
+       */
+      public User.Builder getUserBuilder() {
+        
+        onChanged();
+        return getUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.User user = 2;</code>
+       */
+      public UserOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
+        } else {
+          return user_ == null ?
+              User.getDefaultInstance() : user_;
+        }
+      }
+      /**
+       * <code>.proto.User user = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          User, User.Builder, UserOrBuilder>
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              User, User.Builder, UserOrBuilder>(
+                  getUser(),
+                  getParentForChildren(),
+                  isClean());
+          user_ = null;
+        }
+        return userBuilder_;
+      }
+
+      private Object sessionId_ = "";
+      /**
+       * <code>string sessionId = 3;</code>
+       * @return The sessionId.
+       */
+      public String getSessionId() {
+        Object ref = sessionId_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          sessionId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 3;</code>
+       * @return The bytes for sessionId.
+       */
+      public com.google.protobuf.ByteString
+          getSessionIdBytes() {
+        Object ref = sessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          sessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 3;</code>
+       * @param value The sessionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sessionId = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSessionId() {
+        
+        sessionId_ = getDefaultInstance().getSessionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sessionId = 3;</code>
+       * @param value The bytes for sessionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Urls urls_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Urls, Urls.Builder, UrlsOrBuilder> urlsBuilder_;
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       * @return Whether the urls field is set.
+       */
+      public boolean hasUrls() {
+        return urlsBuilder_ != null || urls_ != null;
+      }
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       * @return The urls.
+       */
+      public Urls getUrls() {
+        if (urlsBuilder_ == null) {
+          return urls_ == null ? Urls.getDefaultInstance() : urls_;
+        } else {
+          return urlsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       */
+      public Builder setUrls(Urls value) {
+        if (urlsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          urls_ = value;
+          onChanged();
+        } else {
+          urlsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       */
+      public Builder setUrls(
+          Urls.Builder builderForValue) {
+        if (urlsBuilder_ == null) {
+          urls_ = builderForValue.build();
+          onChanged();
+        } else {
+          urlsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       */
+      public Builder mergeUrls(Urls value) {
+        if (urlsBuilder_ == null) {
+          if (urls_ != null) {
+            urls_ =
+              Urls.newBuilder(urls_).mergeFrom(value).buildPartial();
+          } else {
+            urls_ = value;
+          }
+          onChanged();
+        } else {
+          urlsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       */
+      public Builder clearUrls() {
+        if (urlsBuilder_ == null) {
+          urls_ = null;
+          onChanged();
+        } else {
+          urls_ = null;
+          urlsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       */
+      public Urls.Builder getUrlsBuilder() {
+        
+        onChanged();
+        return getUrlsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       */
+      public UrlsOrBuilder getUrlsOrBuilder() {
+        if (urlsBuilder_ != null) {
+          return urlsBuilder_.getMessageOrBuilder();
+        } else {
+          return urls_ == null ?
+              Urls.getDefaultInstance() : urls_;
+        }
+      }
+      /**
+       * <code>.proto.Urls urls = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Urls, Urls.Builder, UrlsOrBuilder>
+          getUrlsFieldBuilder() {
+        if (urlsBuilder_ == null) {
+          urlsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Urls, Urls.Builder, UrlsOrBuilder>(
+                  getUrls(),
+                  getParentForChildren(),
+                  isClean());
+          urls_ = null;
+        }
+        return urlsBuilder_;
+      }
+
+      private Object inviteCode_ = "";
+      /**
+       * <code>string inviteCode = 5;</code>
+       * @return The inviteCode.
+       */
+      public String getInviteCode() {
+        Object ref = inviteCode_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          inviteCode_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string inviteCode = 5;</code>
+       * @return The bytes for inviteCode.
+       */
+      public com.google.protobuf.ByteString
+          getInviteCodeBytes() {
+        Object ref = inviteCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          inviteCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string inviteCode = 5;</code>
+       * @param value The inviteCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInviteCode(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        inviteCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string inviteCode = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInviteCode() {
+        
+        inviteCode_ = getDefaultInstance().getInviteCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string inviteCode = 5;</code>
+       * @param value The bytes for inviteCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInviteCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        inviteCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int privacy_ ;
+      /**
+       * <code>int32 privacy = 6;</code>
+       * @return The privacy.
+       */
+      @Override
+      public int getPrivacy() {
+        return privacy_;
+      }
+      /**
+       * <code>int32 privacy = 6;</code>
+       * @param value The privacy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivacy(int value) {
+        
+        privacy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 privacy = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrivacy() {
+        
+        privacy_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int disableTime_ ;
+      /**
+       * <code>int32 disableTime = 7;</code>
+       * @return The disableTime.
+       */
+      @Override
+      public int getDisableTime() {
+        return disableTime_;
+      }
+      /**
+       * <code>int32 disableTime = 7;</code>
+       * @param value The disableTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableTime(int value) {
+        
+        disableTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 disableTime = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableTime() {
+        
+        disableTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private Object agoraAppId_ = "";
+      /**
+       * <code>string agoraAppId = 8;</code>
+       * @return The agoraAppId.
+       */
+      public String getAgoraAppId() {
+        Object ref = agoraAppId_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          agoraAppId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string agoraAppId = 8;</code>
+       * @return The bytes for agoraAppId.
+       */
+      public com.google.protobuf.ByteString
+          getAgoraAppIdBytes() {
+        Object ref = agoraAppId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          agoraAppId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string agoraAppId = 8;</code>
+       * @param value The agoraAppId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAgoraAppId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        agoraAppId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string agoraAppId = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAgoraAppId() {
+        
+        agoraAppId_ = getDefaultInstance().getAgoraAppId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string agoraAppId = 8;</code>
+       * @param value The bytes for agoraAppId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAgoraAppIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        agoraAppId_ = value;
+        onChanged();
+        return this;
+      }
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -564,18 +1545,18 @@ public final class DataProto {
     }
 
     // @@protoc_insertion_point(class_scope:proto.Data)
-    private static final org.pd.domain.DataProto.Data DEFAULT_INSTANCE;
+    private static final Data DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.pd.domain.DataProto.Data();
+      DEFAULT_INSTANCE = new Data();
     }
 
-    public static org.pd.domain.DataProto.Data getDefaultInstance() {
+    public static Data getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<Data>
         PARSER = new com.google.protobuf.AbstractParser<Data>() {
-      @java.lang.Override
+      @Override
       public Data parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -599,13 +1580,13 @@ public final class DataProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Data> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public org.pd.domain.DataProto.Data getDefaultInstanceForType() {
+    @Override
+    public Data getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -629,7 +1610,7 @@ public final class DataProto {
      * <code>string errMsg = 2;</code>
      * @return The errMsg.
      */
-    java.lang.String getErrMsg();
+    String getErrMsg();
     /**
      * <pre>
      * 错误内容
@@ -649,7 +1630,7 @@ public final class DataProto {
      * <code>string flag = 3;</code>
      * @return The flag.
      */
-    java.lang.String getFlag();
+    String getFlag();
     /**
      * <pre>
      * 扩展字段
@@ -678,29 +1659,29 @@ public final class DataProto {
       flag_ = "";
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new CommonResult();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.pd.domain.DataProto.internal_static_proto_CommonResult_descriptor;
+      return DataProto.internal_static_proto_CommonResult_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.pd.domain.DataProto.internal_static_proto_CommonResult_fieldAccessorTable
+      return DataProto.internal_static_proto_CommonResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.pd.domain.DataProto.CommonResult.class, org.pd.domain.DataProto.CommonResult.Builder.class);
+              CommonResult.class, Builder.class);
     }
 
     public static final int ERRCODE_FIELD_NUMBER = 1;
@@ -709,13 +1690,13 @@ public final class DataProto {
      * <code>int32 errCode = 1;</code>
      * @return The errCode.
      */
-    @java.lang.Override
+    @Override
     public int getErrCode() {
       return errCode_;
     }
 
     public static final int ERRMSG_FIELD_NUMBER = 2;
-    private volatile java.lang.Object errMsg_;
+    private volatile Object errMsg_;
     /**
      * <pre>
      * 错误内容
@@ -724,15 +1705,15 @@ public final class DataProto {
      * <code>string errMsg = 2;</code>
      * @return The errMsg.
      */
-    @java.lang.Override
-    public java.lang.String getErrMsg() {
-      java.lang.Object ref = errMsg_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getErrMsg() {
+      Object ref = errMsg_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         errMsg_ = s;
         return s;
       }
@@ -745,14 +1726,14 @@ public final class DataProto {
      * <code>string errMsg = 2;</code>
      * @return The bytes for errMsg.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getErrMsgBytes() {
-      java.lang.Object ref = errMsg_;
-      if (ref instanceof java.lang.String) {
+      Object ref = errMsg_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         errMsg_ = b;
         return b;
       } else {
@@ -761,7 +1742,7 @@ public final class DataProto {
     }
 
     public static final int FLAG_FIELD_NUMBER = 3;
-    private volatile java.lang.Object flag_;
+    private volatile Object flag_;
     /**
      * <pre>
      * 扩展字段
@@ -770,15 +1751,15 @@ public final class DataProto {
      * <code>string flag = 3;</code>
      * @return The flag.
      */
-    @java.lang.Override
-    public java.lang.String getFlag() {
-      java.lang.Object ref = flag_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getFlag() {
+      Object ref = flag_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         flag_ = s;
         return s;
       }
@@ -791,14 +1772,14 @@ public final class DataProto {
      * <code>string flag = 3;</code>
      * @return The bytes for flag.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getFlagBytes() {
-      java.lang.Object ref = flag_;
-      if (ref instanceof java.lang.String) {
+      Object ref = flag_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         flag_ = b;
         return b;
       } else {
@@ -807,7 +1788,7 @@ public final class DataProto {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -817,7 +1798,7 @@ public final class DataProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (errCode_ != 0) {
@@ -832,7 +1813,7 @@ public final class DataProto {
       getUnknownFields().writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -853,15 +1834,15 @@ public final class DataProto {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.pd.domain.DataProto.CommonResult)) {
+      if (!(obj instanceof CommonResult)) {
         return super.equals(obj);
       }
-      org.pd.domain.DataProto.CommonResult other = (org.pd.domain.DataProto.CommonResult) obj;
+      CommonResult other = (CommonResult) obj;
 
       if (getErrCode()
           != other.getErrCode()) return false;
@@ -873,7 +1854,7 @@ public final class DataProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -891,69 +1872,69 @@ public final class DataProto {
       return hash;
     }
 
-    public static org.pd.domain.DataProto.CommonResult parseFrom(
+    public static CommonResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(
+    public static CommonResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(
+    public static CommonResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(
+    public static CommonResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(byte[] data)
+    public static CommonResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(
+    public static CommonResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(java.io.InputStream input)
+    public static CommonResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(
+    public static CommonResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.CommonResult parseDelimitedFrom(java.io.InputStream input)
+    public static CommonResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.pd.domain.DataProto.CommonResult parseDelimitedFrom(
+    public static CommonResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(
+    public static CommonResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.pd.domain.DataProto.CommonResult parseFrom(
+    public static CommonResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -961,23 +1942,23 @@ public final class DataProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.pd.domain.DataProto.CommonResult prototype) {
+    public static Builder newBuilder(CommonResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -987,18 +1968,18 @@ public final class DataProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.CommonResult)
-        org.pd.domain.DataProto.CommonResultOrBuilder {
+        CommonResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.pd.domain.DataProto.internal_static_proto_CommonResult_descriptor;
+        return DataProto.internal_static_proto_CommonResult_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.pd.domain.DataProto.internal_static_proto_CommonResult_fieldAccessorTable
+        return DataProto.internal_static_proto_CommonResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.pd.domain.DataProto.CommonResult.class, org.pd.domain.DataProto.CommonResult.Builder.class);
+                CommonResult.class, Builder.class);
       }
 
       // Construct using org.pd.domain.DataProto.CommonResult.newBuilder()
@@ -1007,11 +1988,11 @@ public final class DataProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
 
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         errCode_ = 0;
@@ -1023,29 +2004,29 @@ public final class DataProto {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.pd.domain.DataProto.internal_static_proto_CommonResult_descriptor;
+        return DataProto.internal_static_proto_CommonResult_descriptor;
       }
 
-      @java.lang.Override
-      public org.pd.domain.DataProto.CommonResult getDefaultInstanceForType() {
-        return org.pd.domain.DataProto.CommonResult.getDefaultInstance();
+      @Override
+      public CommonResult getDefaultInstanceForType() {
+        return CommonResult.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public org.pd.domain.DataProto.CommonResult build() {
-        org.pd.domain.DataProto.CommonResult result = buildPartial();
+      @Override
+      public CommonResult build() {
+        CommonResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public org.pd.domain.DataProto.CommonResult buildPartial() {
-        org.pd.domain.DataProto.CommonResult result = new org.pd.domain.DataProto.CommonResult(this);
+      @Override
+      public CommonResult buildPartial() {
+        CommonResult result = new CommonResult(this);
         result.errCode_ = errCode_;
         result.errMsg_ = errMsg_;
         result.flag_ = flag_;
@@ -1053,50 +2034,50 @@ public final class DataProto {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.pd.domain.DataProto.CommonResult) {
-          return mergeFrom((org.pd.domain.DataProto.CommonResult)other);
+        if (other instanceof CommonResult) {
+          return mergeFrom((CommonResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.pd.domain.DataProto.CommonResult other) {
-        if (other == org.pd.domain.DataProto.CommonResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(CommonResult other) {
+        if (other == CommonResult.getDefaultInstance()) return this;
         if (other.getErrCode() != 0) {
           setErrCode(other.getErrCode());
         }
@@ -1113,18 +2094,18 @@ public final class DataProto {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException();
         }
         try {
           boolean done = false;
@@ -1150,7 +2131,7 @@ public final class DataProto {
                 break;
               } // case 26
               default: {
-                //if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+//                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
 //                }
                 break;
@@ -1170,7 +2151,7 @@ public final class DataProto {
        * <code>int32 errCode = 1;</code>
        * @return The errCode.
        */
-      @java.lang.Override
+      @Override
       public int getErrCode() {
         return errCode_;
       }
@@ -1196,7 +2177,7 @@ public final class DataProto {
         return this;
       }
 
-      private java.lang.Object errMsg_ = "";
+      private Object errMsg_ = "";
       /**
        * <pre>
        * 错误内容
@@ -1205,16 +2186,16 @@ public final class DataProto {
        * <code>string errMsg = 2;</code>
        * @return The errMsg.
        */
-      public java.lang.String getErrMsg() {
-        java.lang.Object ref = errMsg_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getErrMsg() {
+        Object ref = errMsg_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           errMsg_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -1227,11 +2208,11 @@ public final class DataProto {
        */
       public com.google.protobuf.ByteString
           getErrMsgBytes() {
-        java.lang.Object ref = errMsg_;
+        Object ref = errMsg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           errMsg_ = b;
           return b;
         } else {
@@ -1248,7 +2229,7 @@ public final class DataProto {
        * @return This builder for chaining.
        */
       public Builder setErrMsg(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1292,7 +2273,7 @@ public final class DataProto {
         return this;
       }
 
-      private java.lang.Object flag_ = "";
+      private Object flag_ = "";
       /**
        * <pre>
        * 扩展字段
@@ -1301,16 +2282,16 @@ public final class DataProto {
        * <code>string flag = 3;</code>
        * @return The flag.
        */
-      public java.lang.String getFlag() {
-        java.lang.Object ref = flag_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFlag() {
+        Object ref = flag_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           flag_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -1323,11 +2304,11 @@ public final class DataProto {
        */
       public com.google.protobuf.ByteString
           getFlagBytes() {
-        java.lang.Object ref = flag_;
+        Object ref = flag_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           flag_ = b;
           return b;
         } else {
@@ -1344,7 +2325,7 @@ public final class DataProto {
        * @return This builder for chaining.
        */
       public Builder setFlag(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1387,13 +2368,13 @@ public final class DataProto {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1404,18 +2385,18 @@ public final class DataProto {
     }
 
     // @@protoc_insertion_point(class_scope:proto.CommonResult)
-    private static final org.pd.domain.DataProto.CommonResult DEFAULT_INSTANCE;
+    private static final CommonResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.pd.domain.DataProto.CommonResult();
+      DEFAULT_INSTANCE = new CommonResult();
     }
 
-    public static org.pd.domain.DataProto.CommonResult getDefaultInstance() {
+    public static CommonResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<CommonResult>
         PARSER = new com.google.protobuf.AbstractParser<CommonResult>() {
-      @java.lang.Override
+      @Override
       public CommonResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1439,13 +2420,2513 @@ public final class DataProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<CommonResult> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public org.pd.domain.DataProto.CommonResult getDefaultInstanceForType() {
+    @Override
+    public CommonResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UserOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.User)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 uid = 1;</code>
+     * @return The uid.
+     */
+    int getUid();
+
+    /**
+     * <code>string nickName = 2;</code>
+     * @return The nickName.
+     */
+    String getNickName();
+    /**
+     * <code>string nickName = 2;</code>
+     * @return The bytes for nickName.
+     */
+    com.google.protobuf.ByteString
+        getNickNameBytes();
+
+    /**
+     * <code>string identify = 3;</code>
+     * @return The identify.
+     */
+    String getIdentify();
+    /**
+     * <code>string identify = 3;</code>
+     * @return The bytes for identify.
+     */
+    com.google.protobuf.ByteString
+        getIdentifyBytes();
+  }
+  /**
+   * Protobuf type {@code proto.User}
+   */
+  public static final class User extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.User)
+      UserOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use User.newBuilder() to construct.
+    private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private User() {
+      nickName_ = "";
+      identify_ = "";
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new User();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return DataProto.internal_static_proto_User_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return DataProto.internal_static_proto_User_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              User.class, Builder.class);
+    }
+
+    public static final int UID_FIELD_NUMBER = 1;
+    private int uid_;
+    /**
+     * <code>int32 uid = 1;</code>
+     * @return The uid.
+     */
+    @Override
+    public int getUid() {
+      return uid_;
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 2;
+    private volatile Object nickName_;
+    /**
+     * <code>string nickName = 2;</code>
+     * @return The nickName.
+     */
+    @Override
+    public String getNickName() {
+      Object ref = nickName_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        nickName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string nickName = 2;</code>
+     * @return The bytes for nickName.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getNickNameBytes() {
+      Object ref = nickName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        nickName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IDENTIFY_FIELD_NUMBER = 3;
+    private volatile Object identify_;
+    /**
+     * <code>string identify = 3;</code>
+     * @return The identify.
+     */
+    @Override
+    public String getIdentify() {
+      Object ref = identify_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        identify_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string identify = 3;</code>
+     * @return The bytes for identify.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getIdentifyBytes() {
+      Object ref = identify_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        identify_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (uid_ != 0) {
+        output.writeInt32(1, uid_);
+      }
+      if (!getNickNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nickName_);
+      }
+      if (!getIdentifyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, identify_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, uid_);
+      }
+      if (!getNickNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nickName_);
+      }
+      if (!getIdentifyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, identify_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof User)) {
+        return super.equals(obj);
+      }
+      User other = (User) obj;
+
+      if (getUid()
+          != other.getUid()) return false;
+      if (!getNickName()
+          .equals(other.getNickName())) return false;
+      if (!getIdentify()
+          .equals(other.getIdentify())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
+      hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNickName().hashCode();
+      hash = (37 * hash) + IDENTIFY_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentify().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static User parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static User parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static User parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static User parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static User parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static User parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static User parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static User parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static User parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static User parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static User parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static User parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(User prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.User}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.User)
+        UserOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return DataProto.internal_static_proto_User_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return DataProto.internal_static_proto_User_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                User.class, Builder.class);
+      }
+
+      // Construct using org.pd.domain.DataProto.User.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        uid_ = 0;
+
+        nickName_ = "";
+
+        identify_ = "";
+
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return DataProto.internal_static_proto_User_descriptor;
+      }
+
+      @Override
+      public User getDefaultInstanceForType() {
+        return User.getDefaultInstance();
+      }
+
+      @Override
+      public User build() {
+        User result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public User buildPartial() {
+        User result = new User(this);
+        result.uid_ = uid_;
+        result.nickName_ = nickName_;
+        result.identify_ = identify_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof User) {
+          return mergeFrom((User)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(User other) {
+        if (other == User.getDefaultInstance()) return this;
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
+        }
+        if (!other.getNickName().isEmpty()) {
+          nickName_ = other.nickName_;
+          onChanged();
+        }
+        if (!other.getIdentify().isEmpty()) {
+          identify_ = other.identify_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                uid_ = input.readInt32();
+
+                break;
+              } // case 8
+              case 18: {
+                nickName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                identify_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              default: {
+//                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+//                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int uid_ ;
+      /**
+       * <code>int32 uid = 1;</code>
+       * @return The uid.
+       */
+      @Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>int32 uid = 1;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 uid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private Object nickName_ = "";
+      /**
+       * <code>string nickName = 2;</code>
+       * @return The nickName.
+       */
+      public String getNickName() {
+        Object ref = nickName_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          nickName_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string nickName = 2;</code>
+       * @return The bytes for nickName.
+       */
+      public com.google.protobuf.ByteString
+          getNickNameBytes() {
+        Object ref = nickName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          nickName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string nickName = 2;</code>
+       * @param value The nickName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNickName(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nickName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nickName = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNickName() {
+        
+        nickName_ = getDefaultInstance().getNickName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nickName = 2;</code>
+       * @param value The bytes for nickName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNickNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nickName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object identify_ = "";
+      /**
+       * <code>string identify = 3;</code>
+       * @return The identify.
+       */
+      public String getIdentify() {
+        Object ref = identify_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          identify_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string identify = 3;</code>
+       * @return The bytes for identify.
+       */
+      public com.google.protobuf.ByteString
+          getIdentifyBytes() {
+        Object ref = identify_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          identify_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string identify = 3;</code>
+       * @param value The identify to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentify(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        identify_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string identify = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIdentify() {
+        
+        identify_ = getDefaultInstance().getIdentify();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string identify = 3;</code>
+       * @param value The bytes for identify to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentifyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        identify_ = value;
+        onChanged();
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.User)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.User)
+    private static final User DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new User();
+    }
+
+    public static User getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<User>
+        PARSER = new com.google.protobuf.AbstractParser<User>() {
+      @Override
+      public User parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<User> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<User> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public User getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UrlsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Urls)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string biz = 1;</code>
+     * @return The biz.
+     */
+    String getBiz();
+    /**
+     * <code>string biz = 1;</code>
+     * @return The bytes for biz.
+     */
+    com.google.protobuf.ByteString
+        getBizBytes();
+
+    /**
+     * <code>string session = 2;</code>
+     * @return The session.
+     */
+    String getSession();
+    /**
+     * <code>string session = 2;</code>
+     * @return The bytes for session.
+     */
+    com.google.protobuf.ByteString
+        getSessionBytes();
+
+    /**
+     * <code>string friend = 3;</code>
+     * @return The friend.
+     */
+    String getFriend();
+    /**
+     * <code>string friend = 3;</code>
+     * @return The bytes for friend.
+     */
+    com.google.protobuf.ByteString
+        getFriendBytes();
+
+    /**
+     * <code>string group = 4;</code>
+     * @return The group.
+     */
+    String getGroup();
+    /**
+     * <code>string group = 4;</code>
+     * @return The bytes for group.
+     */
+    com.google.protobuf.ByteString
+        getGroupBytes();
+
+    /**
+     * <code>string download = 5;</code>
+     * @return The download.
+     */
+    String getDownload();
+    /**
+     * <code>string download = 5;</code>
+     * @return The bytes for download.
+     */
+    com.google.protobuf.ByteString
+        getDownloadBytes();
+
+    /**
+     * <code>string login = 6;</code>
+     * @return The login.
+     */
+    String getLogin();
+    /**
+     * <code>string login = 6;</code>
+     * @return The bytes for login.
+     */
+    com.google.protobuf.ByteString
+        getLoginBytes();
+
+    /**
+     * <code>string config = 7;</code>
+     * @return The config.
+     */
+    String getConfig();
+    /**
+     * <code>string config = 7;</code>
+     * @return The bytes for config.
+     */
+    com.google.protobuf.ByteString
+        getConfigBytes();
+
+    /**
+     * <code>string wss = 8;</code>
+     * @return The wss.
+     */
+    String getWss();
+    /**
+     * <code>string wss = 8;</code>
+     * @return The bytes for wss.
+     */
+    com.google.protobuf.ByteString
+        getWssBytes();
+
+    /**
+     * <code>int32 socketProtocol = 9;</code>
+     * @return The socketProtocol.
+     */
+    int getSocketProtocol();
+
+    /**
+     * <code>int32 uploadServer = 10;</code>
+     * @return The uploadServer.
+     */
+    int getUploadServer();
+  }
+  /**
+   * Protobuf type {@code proto.Urls}
+   */
+  public static final class Urls extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.Urls)
+      UrlsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Urls.newBuilder() to construct.
+    private Urls(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Urls() {
+      biz_ = "";
+      session_ = "";
+      friend_ = "";
+      group_ = "";
+      download_ = "";
+      login_ = "";
+      config_ = "";
+      wss_ = "";
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Urls();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return DataProto.internal_static_proto_Urls_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return DataProto.internal_static_proto_Urls_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Urls.class, Builder.class);
+    }
+
+    public static final int BIZ_FIELD_NUMBER = 1;
+    private volatile Object biz_;
+    /**
+     * <code>string biz = 1;</code>
+     * @return The biz.
+     */
+    @Override
+    public String getBiz() {
+      Object ref = biz_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        biz_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string biz = 1;</code>
+     * @return The bytes for biz.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getBizBytes() {
+      Object ref = biz_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        biz_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SESSION_FIELD_NUMBER = 2;
+    private volatile Object session_;
+    /**
+     * <code>string session = 2;</code>
+     * @return The session.
+     */
+    @Override
+    public String getSession() {
+      Object ref = session_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        session_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string session = 2;</code>
+     * @return The bytes for session.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getSessionBytes() {
+      Object ref = session_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        session_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FRIEND_FIELD_NUMBER = 3;
+    private volatile Object friend_;
+    /**
+     * <code>string friend = 3;</code>
+     * @return The friend.
+     */
+    @Override
+    public String getFriend() {
+      Object ref = friend_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        friend_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string friend = 3;</code>
+     * @return The bytes for friend.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getFriendBytes() {
+      Object ref = friend_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        friend_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUP_FIELD_NUMBER = 4;
+    private volatile Object group_;
+    /**
+     * <code>string group = 4;</code>
+     * @return The group.
+     */
+    @Override
+    public String getGroup() {
+      Object ref = group_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        group_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string group = 4;</code>
+     * @return The bytes for group.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getGroupBytes() {
+      Object ref = group_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        group_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOWNLOAD_FIELD_NUMBER = 5;
+    private volatile Object download_;
+    /**
+     * <code>string download = 5;</code>
+     * @return The download.
+     */
+    @Override
+    public String getDownload() {
+      Object ref = download_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        download_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string download = 5;</code>
+     * @return The bytes for download.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getDownloadBytes() {
+      Object ref = download_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        download_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOGIN_FIELD_NUMBER = 6;
+    private volatile Object login_;
+    /**
+     * <code>string login = 6;</code>
+     * @return The login.
+     */
+    @Override
+    public String getLogin() {
+      Object ref = login_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        login_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string login = 6;</code>
+     * @return The bytes for login.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getLoginBytes() {
+      Object ref = login_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        login_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONFIG_FIELD_NUMBER = 7;
+    private volatile Object config_;
+    /**
+     * <code>string config = 7;</code>
+     * @return The config.
+     */
+    @Override
+    public String getConfig() {
+      Object ref = config_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        config_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string config = 7;</code>
+     * @return The bytes for config.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getConfigBytes() {
+      Object ref = config_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        config_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int WSS_FIELD_NUMBER = 8;
+    private volatile Object wss_;
+    /**
+     * <code>string wss = 8;</code>
+     * @return The wss.
+     */
+    @Override
+    public String getWss() {
+      Object ref = wss_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        wss_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string wss = 8;</code>
+     * @return The bytes for wss.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getWssBytes() {
+      Object ref = wss_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        wss_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOCKETPROTOCOL_FIELD_NUMBER = 9;
+    private int socketProtocol_;
+    /**
+     * <code>int32 socketProtocol = 9;</code>
+     * @return The socketProtocol.
+     */
+    @Override
+    public int getSocketProtocol() {
+      return socketProtocol_;
+    }
+
+    public static final int UPLOADSERVER_FIELD_NUMBER = 10;
+    private int uploadServer_;
+    /**
+     * <code>int32 uploadServer = 10;</code>
+     * @return The uploadServer.
+     */
+    @Override
+    public int getUploadServer() {
+      return uploadServer_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getBizBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, biz_);
+      }
+      if (!getSessionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, session_);
+      }
+      if (!getFriendBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, friend_);
+      }
+      if (!getGroupBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, group_);
+      }
+      if (!getDownloadBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, download_);
+      }
+      if (!getLoginBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, login_);
+      }
+      if (!getConfigBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, config_);
+      }
+      if (!getWssBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, wss_);
+      }
+      if (socketProtocol_ != 0) {
+        output.writeInt32(9, socketProtocol_);
+      }
+      if (uploadServer_ != 0) {
+        output.writeInt32(10, uploadServer_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getBizBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, biz_);
+      }
+      if (!getSessionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, session_);
+      }
+      if (!getFriendBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, friend_);
+      }
+      if (!getGroupBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, group_);
+      }
+      if (!getDownloadBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, download_);
+      }
+      if (!getLoginBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, login_);
+      }
+      if (!getConfigBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, config_);
+      }
+      if (!getWssBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, wss_);
+      }
+      if (socketProtocol_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, socketProtocol_);
+      }
+      if (uploadServer_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, uploadServer_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Urls)) {
+        return super.equals(obj);
+      }
+      Urls other = (Urls) obj;
+
+      if (!getBiz()
+          .equals(other.getBiz())) return false;
+      if (!getSession()
+          .equals(other.getSession())) return false;
+      if (!getFriend()
+          .equals(other.getFriend())) return false;
+      if (!getGroup()
+          .equals(other.getGroup())) return false;
+      if (!getDownload()
+          .equals(other.getDownload())) return false;
+      if (!getLogin()
+          .equals(other.getLogin())) return false;
+      if (!getConfig()
+          .equals(other.getConfig())) return false;
+      if (!getWss()
+          .equals(other.getWss())) return false;
+      if (getSocketProtocol()
+          != other.getSocketProtocol()) return false;
+      if (getUploadServer()
+          != other.getUploadServer()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BIZ_FIELD_NUMBER;
+      hash = (53 * hash) + getBiz().hashCode();
+      hash = (37 * hash) + SESSION_FIELD_NUMBER;
+      hash = (53 * hash) + getSession().hashCode();
+      hash = (37 * hash) + FRIEND_FIELD_NUMBER;
+      hash = (53 * hash) + getFriend().hashCode();
+      hash = (37 * hash) + GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getGroup().hashCode();
+      hash = (37 * hash) + DOWNLOAD_FIELD_NUMBER;
+      hash = (53 * hash) + getDownload().hashCode();
+      hash = (37 * hash) + LOGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getLogin().hashCode();
+      hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfig().hashCode();
+      hash = (37 * hash) + WSS_FIELD_NUMBER;
+      hash = (53 * hash) + getWss().hashCode();
+      hash = (37 * hash) + SOCKETPROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + getSocketProtocol();
+      hash = (37 * hash) + UPLOADSERVER_FIELD_NUMBER;
+      hash = (53 * hash) + getUploadServer();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Urls parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Urls parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Urls parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Urls parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Urls parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Urls parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Urls parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Urls parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Urls parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Urls parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Urls parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Urls parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Urls prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.Urls}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.Urls)
+        UrlsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return DataProto.internal_static_proto_Urls_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return DataProto.internal_static_proto_Urls_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Urls.class, Builder.class);
+      }
+
+      // Construct using org.pd.domain.DataProto.Urls.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        biz_ = "";
+
+        session_ = "";
+
+        friend_ = "";
+
+        group_ = "";
+
+        download_ = "";
+
+        login_ = "";
+
+        config_ = "";
+
+        wss_ = "";
+
+        socketProtocol_ = 0;
+
+        uploadServer_ = 0;
+
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return DataProto.internal_static_proto_Urls_descriptor;
+      }
+
+      @Override
+      public Urls getDefaultInstanceForType() {
+        return Urls.getDefaultInstance();
+      }
+
+      @Override
+      public Urls build() {
+        Urls result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public Urls buildPartial() {
+        Urls result = new Urls(this);
+        result.biz_ = biz_;
+        result.session_ = session_;
+        result.friend_ = friend_;
+        result.group_ = group_;
+        result.download_ = download_;
+        result.login_ = login_;
+        result.config_ = config_;
+        result.wss_ = wss_;
+        result.socketProtocol_ = socketProtocol_;
+        result.uploadServer_ = uploadServer_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Urls) {
+          return mergeFrom((Urls)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Urls other) {
+        if (other == Urls.getDefaultInstance()) return this;
+        if (!other.getBiz().isEmpty()) {
+          biz_ = other.biz_;
+          onChanged();
+        }
+        if (!other.getSession().isEmpty()) {
+          session_ = other.session_;
+          onChanged();
+        }
+        if (!other.getFriend().isEmpty()) {
+          friend_ = other.friend_;
+          onChanged();
+        }
+        if (!other.getGroup().isEmpty()) {
+          group_ = other.group_;
+          onChanged();
+        }
+        if (!other.getDownload().isEmpty()) {
+          download_ = other.download_;
+          onChanged();
+        }
+        if (!other.getLogin().isEmpty()) {
+          login_ = other.login_;
+          onChanged();
+        }
+        if (!other.getConfig().isEmpty()) {
+          config_ = other.config_;
+          onChanged();
+        }
+        if (!other.getWss().isEmpty()) {
+          wss_ = other.wss_;
+          onChanged();
+        }
+        if (other.getSocketProtocol() != 0) {
+          setSocketProtocol(other.getSocketProtocol());
+        }
+        if (other.getUploadServer() != 0) {
+          setUploadServer(other.getUploadServer());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                biz_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                session_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                friend_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              case 34: {
+                group_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                download_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+              case 50: {
+                login_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+              case 58: {
+                config_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+              case 66: {
+                wss_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+              case 72: {
+                socketProtocol_ = input.readInt32();
+
+                break;
+              } // case 72
+              case 80: {
+                uploadServer_ = input.readInt32();
+
+                break;
+              } // case 80
+              default: {
+//                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+//                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private Object biz_ = "";
+      /**
+       * <code>string biz = 1;</code>
+       * @return The biz.
+       */
+      public String getBiz() {
+        Object ref = biz_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          biz_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string biz = 1;</code>
+       * @return The bytes for biz.
+       */
+      public com.google.protobuf.ByteString
+          getBizBytes() {
+        Object ref = biz_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          biz_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string biz = 1;</code>
+       * @param value The biz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBiz(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        biz_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string biz = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBiz() {
+        
+        biz_ = getDefaultInstance().getBiz();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string biz = 1;</code>
+       * @param value The bytes for biz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBizBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        biz_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object session_ = "";
+      /**
+       * <code>string session = 2;</code>
+       * @return The session.
+       */
+      public String getSession() {
+        Object ref = session_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          session_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string session = 2;</code>
+       * @return The bytes for session.
+       */
+      public com.google.protobuf.ByteString
+          getSessionBytes() {
+        Object ref = session_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          session_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string session = 2;</code>
+       * @param value The session to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSession(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        session_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string session = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSession() {
+        
+        session_ = getDefaultInstance().getSession();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string session = 2;</code>
+       * @param value The bytes for session to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        session_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object friend_ = "";
+      /**
+       * <code>string friend = 3;</code>
+       * @return The friend.
+       */
+      public String getFriend() {
+        Object ref = friend_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          friend_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string friend = 3;</code>
+       * @return The bytes for friend.
+       */
+      public com.google.protobuf.ByteString
+          getFriendBytes() {
+        Object ref = friend_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          friend_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string friend = 3;</code>
+       * @param value The friend to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFriend(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        friend_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string friend = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFriend() {
+        
+        friend_ = getDefaultInstance().getFriend();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string friend = 3;</code>
+       * @param value The bytes for friend to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFriendBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        friend_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object group_ = "";
+      /**
+       * <code>string group = 4;</code>
+       * @return The group.
+       */
+      public String getGroup() {
+        Object ref = group_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          group_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string group = 4;</code>
+       * @return The bytes for group.
+       */
+      public com.google.protobuf.ByteString
+          getGroupBytes() {
+        Object ref = group_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          group_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string group = 4;</code>
+       * @param value The group to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroup(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        group_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string group = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroup() {
+        
+        group_ = getDefaultInstance().getGroup();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string group = 4;</code>
+       * @param value The bytes for group to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        group_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object download_ = "";
+      /**
+       * <code>string download = 5;</code>
+       * @return The download.
+       */
+      public String getDownload() {
+        Object ref = download_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          download_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string download = 5;</code>
+       * @return The bytes for download.
+       */
+      public com.google.protobuf.ByteString
+          getDownloadBytes() {
+        Object ref = download_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          download_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string download = 5;</code>
+       * @param value The download to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDownload(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        download_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string download = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDownload() {
+        
+        download_ = getDefaultInstance().getDownload();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string download = 5;</code>
+       * @param value The bytes for download to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDownloadBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        download_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object login_ = "";
+      /**
+       * <code>string login = 6;</code>
+       * @return The login.
+       */
+      public String getLogin() {
+        Object ref = login_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          login_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string login = 6;</code>
+       * @return The bytes for login.
+       */
+      public com.google.protobuf.ByteString
+          getLoginBytes() {
+        Object ref = login_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          login_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string login = 6;</code>
+       * @param value The login to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLogin(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        login_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string login = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLogin() {
+        
+        login_ = getDefaultInstance().getLogin();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string login = 6;</code>
+       * @param value The bytes for login to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLoginBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        login_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object config_ = "";
+      /**
+       * <code>string config = 7;</code>
+       * @return The config.
+       */
+      public String getConfig() {
+        Object ref = config_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          config_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string config = 7;</code>
+       * @return The bytes for config.
+       */
+      public com.google.protobuf.ByteString
+          getConfigBytes() {
+        Object ref = config_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          config_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string config = 7;</code>
+       * @param value The config to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfig(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        config_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string config = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfig() {
+        
+        config_ = getDefaultInstance().getConfig();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string config = 7;</code>
+       * @param value The bytes for config to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfigBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        config_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object wss_ = "";
+      /**
+       * <code>string wss = 8;</code>
+       * @return The wss.
+       */
+      public String getWss() {
+        Object ref = wss_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          wss_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string wss = 8;</code>
+       * @return The bytes for wss.
+       */
+      public com.google.protobuf.ByteString
+          getWssBytes() {
+        Object ref = wss_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          wss_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string wss = 8;</code>
+       * @param value The wss to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWss(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        wss_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string wss = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWss() {
+        
+        wss_ = getDefaultInstance().getWss();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string wss = 8;</code>
+       * @param value The bytes for wss to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWssBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        wss_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int socketProtocol_ ;
+      /**
+       * <code>int32 socketProtocol = 9;</code>
+       * @return The socketProtocol.
+       */
+      @Override
+      public int getSocketProtocol() {
+        return socketProtocol_;
+      }
+      /**
+       * <code>int32 socketProtocol = 9;</code>
+       * @param value The socketProtocol to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSocketProtocol(int value) {
+        
+        socketProtocol_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 socketProtocol = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSocketProtocol() {
+        
+        socketProtocol_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int uploadServer_ ;
+      /**
+       * <code>int32 uploadServer = 10;</code>
+       * @return The uploadServer.
+       */
+      @Override
+      public int getUploadServer() {
+        return uploadServer_;
+      }
+      /**
+       * <code>int32 uploadServer = 10;</code>
+       * @param value The uploadServer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUploadServer(int value) {
+        
+        uploadServer_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 uploadServer = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUploadServer() {
+        
+        uploadServer_ = 0;
+        onChanged();
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.Urls)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.Urls)
+    private static final Urls DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Urls();
+    }
+
+    public static Urls getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Urls>
+        PARSER = new com.google.protobuf.AbstractParser<Urls>() {
+      @Override
+      public Urls parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Urls> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<Urls> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public Urls getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1461,6 +4942,16 @@ public final class DataProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_CommonResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_User_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_User_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Urls_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Urls_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1469,12 +4960,21 @@ public final class DataProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\ndata.proto\022\005proto\"2\n\004Data\022*\n\rcommentRe" +
-      "sult\030\001 \001(\0132\023.proto.CommonResult\"=\n\014Commo" +
-      "nResult\022\017\n\007errCode\030\001 \001(\005\022\016\n\006errMsg\030\002 \001(\t" +
-      "\022\014\n\004flag\030\003 \001(\tB\034\n\rorg.pd.domainB\tDataPro" +
-      "toP\000b\006proto3"
+    String[] descriptorData = {
+      "\n\ndata.proto\022\005proto\"\311\001\n\004Data\022*\n\rcommentR" +
+      "esult\030\001 \001(\0132\023.proto.CommonResult\022\031\n\004user" +
+      "\030\002 \001(\0132\013.proto.User\022\021\n\tsessionId\030\003 \001(\t\022\031" +
+      "\n\004urls\030\004 \001(\0132\013.proto.Urls\022\022\n\ninviteCode\030" +
+      "\005 \001(\t\022\017\n\007privacy\030\006 \001(\005\022\023\n\013disableTime\030\007 " +
+      "\001(\005\022\022\n\nagoraAppId\030\010 \001(\t\"=\n\014CommonResult\022" +
+      "\017\n\007errCode\030\001 \001(\005\022\016\n\006errMsg\030\002 \001(\t\022\014\n\004flag" +
+      "\030\003 \001(\t\"7\n\004User\022\013\n\003uid\030\001 \001(\005\022\020\n\010nickName\030" +
+      "\002 \001(\t\022\020\n\010identify\030\003 \001(\t\"\257\001\n\004Urls\022\013\n\003biz\030" +
+      "\001 \001(\t\022\017\n\007session\030\002 \001(\t\022\016\n\006friend\030\003 \001(\t\022\r" +
+      "\n\005group\030\004 \001(\t\022\020\n\010download\030\005 \001(\t\022\r\n\005login" +
+      "\030\006 \001(\t\022\016\n\006config\030\007 \001(\t\022\013\n\003wss\030\010 \001(\t\022\026\n\016s" +
+      "ocketProtocol\030\t \001(\005\022\024\n\014uploadServer\030\n \001(" +
+      "\005B\034\n\rorg.pd.domainB\tDataProtoP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1485,13 +4985,25 @@ public final class DataProto {
     internal_static_proto_Data_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Data_descriptor,
-        new java.lang.String[] { "CommentResult", });
+        new String[] { "CommentResult", "User", "SessionId", "Urls", "InviteCode", "Privacy", "DisableTime", "AgoraAppId", });
     internal_static_proto_CommonResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_CommonResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_CommonResult_descriptor,
-        new java.lang.String[] { "ErrCode", "ErrMsg", "Flag", });
+        new String[] { "ErrCode", "ErrMsg", "Flag", });
+    internal_static_proto_User_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_proto_User_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_User_descriptor,
+        new String[] { "Uid", "NickName", "Identify", });
+    internal_static_proto_Urls_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_proto_Urls_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Urls_descriptor,
+        new String[] { "Biz", "Session", "Friend", "Group", "Download", "Login", "Config", "Wss", "SocketProtocol", "UploadServer", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
