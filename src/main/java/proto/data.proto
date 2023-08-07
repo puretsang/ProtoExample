@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+option java_multiple_files = false;
+option java_package = "org.pd.domain";
+option java_outer_classname = "DataProto";
+
+message Data{
+  CommonResult commentResult = 1;
+}
+
+message CommonResult{
+  int32 errCode = 1;
+  string errMsg = 2; // 错误内容
+  string flag = 3;   // 扩展字段
+}
