@@ -11,10 +11,11 @@ message Data{
   User user = 2;
   string sessionId = 3;
   Urls urls = 4;
-  string inviteCode = 5;
-  int32 privacy = 6;
-  int32 disableTime = 7;
-  string agoraAppId = 8;
+  int64 serverTime = 5;
+  string inviteCode = 6;
+  int32 privacy = 7;
+  int64 disableTime = 8;
+  string agoraAppId = 9;
 }
 
 message CommonResult{

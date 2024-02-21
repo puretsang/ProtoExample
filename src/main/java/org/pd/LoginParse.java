@@ -24,14 +24,45 @@ public class LoginParse {
     private ExtensionRegistryLite registryLite;
 
     public void readFile() throws IOException {
-        String[] binary =  binaryData.split(",");
-        byte[] byteArray = new byte[binary.length];
-        for (int i = 0; i < binary.length; i++) {
-            byteArray[i] = Integer.valueOf(binary[i]).byteValue();
-        }
-        DataProto.Data obj = DataProto.Data.parseFrom(byteArray);
+//        String[] binary =  binaryData.split(",");
+//        byte[] byteArray = new byte[binary.length];
+//        for (int i = 0; i < binary.length; i++) {
+//            byteArray[i] = Integer.valueOf(binary[i]).byteValue();
+//        }
+        DataProto.Data obj = DataProto.Data.parseFrom(ByteArr.getByteResult());
         System.out.println(obj.toString());
     }
+
+
+
+//    commonResult {
+//        errCode: 200
+//    }
+//    user {
+//        uid: 2671994
+//        nickName: "\347\224\250\346\210\2665674"
+//        identify: "bzc5a7"
+//    }
+//    sessionId: "b086c96fd34f19300000c6287fc045e7"
+//    urls {
+//        biz: "https://biz.rtdwe.live"
+//        session: "119.8.54.244:8600"
+//        friend: "https://biz.rtdwe.live"
+//        group: "https://biz.rtdwe.live"
+//        download: "https://www.futechat.com"
+//        login: "https://login.rtdwe.live"
+//        config: "https://backup.rtdwe.live"
+//        wss: "wss://wss.rtdwe.live"
+//        socketProtocol: 1
+//        uploadServer: 1
+//        uploadUrl: "http://ufile.bufag2.com:8080/upload"
+//    }
+//    serverTime: 1691660186209
+//    inviteCode: "VW4Z6M"
+//    privacy: 4128
+//    disableTime: 1692264986203
+//    agoraAppId: "5895179b737942799e3933db6183fbac"
+
 
     private String result = "commonResult {\n" +
             "  errCode: 200\n" +
